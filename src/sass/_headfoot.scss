@@ -1,0 +1,121 @@
+/* Contains Header, Between-content and Footer */ 
+
+// Header
+.mainheader {
+    position: absolute; 
+    top: 10px;
+    left: 10px; 
+}
+.headimg {
+    width: 100%; 
+}
+
+@include bigscreen { 
+    .headimg {
+        max-width: 200px; 
+    }    
+}
+@include medscreen {
+    .headimg {
+        max-width: 150px; 
+    }
+}
+@include smallscreen {
+    .headimg {
+        max-width: 80px; 
+    }
+}
+
+// Between "content" -background-images
+.between {
+    @include betweens; 
+    text-align: center; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#betweenone {
+    background-image: url("../../images/iconsblue.png");
+}
+#betweentwo {
+    background-image: url("../../images/iconsgreen.png");
+}
+#betweenthree {
+    background-image: url("../../images/responsiv.png");
+    min-height: 300px; 
+}
+
+@include medscreen {
+    #betweenone, #betweentwo, #betweenthree {
+        background-size: 100%;   
+    }
+}
+@include smallscreen {
+    #betweenone, #betweentwo, #betweenthree {
+        background-size: 100%;
+    }
+    #betweenthree {
+        min-height: 200px; 
+    }
+} 
+
+
+//Footer
+.mainfooter {
+    background-color: #000;
+    
+    padding-top: 20px;
+    padding-bottom: 20px; 
+    display: grid; 
+    p {
+        margin-bottom: 8px; 
+        color: $colorone;
+    }
+}
+.footerimg {
+    width: 100%;
+    max-width: 50px; 
+}
+#footerimage {
+   grid-area: fimg; 
+}
+#footercontent {
+    grid-area: fcont; 
+    a {
+        color: $colorone;    
+        text-decoration: none; 
+    }
+}
+#footerupdate {
+    grid-area: fupd; 
+}
+
+
+@include bigscreen { 
+    .mainfooter {
+        grid-template-columns: auto 50px 50px 300px 50px 300px auto ; 
+        grid-template-areas: ". fimg . fcont . fupd .";
+    }    
+}
+@include medscreen {
+    .mainfooter {
+        grid-template-columns: 5% 20% 35% 35% 5%; 
+        grid-template-areas: ". fimg fcont fupd ."; 
+    }
+} 
+@include smallscreen {
+    .mainfooter {
+        grid-template-columns: 100%; 
+        grid-template-areas: "fimg" "fcont" "fupd"; 
+        padding: 10px; 
+    }
+    #footercontent {
+        margin-bottom: 20px; 
+    }
+    #footerimage {
+        margin-bottom: 20px; 
+        text-align: center; 
+        width: 100%;
+    }
+} 

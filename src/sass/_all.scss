@@ -1,0 +1,137 @@
+*, body {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0; 
+    font-family: 'Roboto', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+//Colors
+$colorone:#aabeb5;
+$colortwo: #466456;
+$darkgrey: #161616; 
+$greenone: #1D4022; 
+$greentwo: #a4afa6; 
+$blueone: #2A356D; 
+$bluetwo: #1f2753; 
+
+// Mixins
+@mixin upperboxes($hover: false) {
+    text-align: center;
+    background-color: $darkgrey; 
+    border: 1px solid #000;  
+    color: $colorone; 
+    box-shadow: 5px 10px 8px #000;
+    @if $hover {
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    h2 {
+        color: $colortwo; 
+    }
+}
+
+@mixin betweens {
+    width: 100%;
+    min-height: 250px; 
+    background-color: $darkgrey; 
+}
+
+@mixin cvboxes {
+    width: 100%; 
+    max-width: 800px; 
+    margin: auto; 
+    background-color: #000; 
+    color: $greentwo; 
+    padding: 20px; 
+}
+
+// Mixins screen sizes
+@mixin bigscreen {
+    @media screen and (min-width:1015px) { @content; }
+}
+@mixin medscreen {
+    @media screen and (min-width:600px) and (max-width: 1014px) { @content; }
+}
+@mixin smallscreen {
+    @media screen and (max-width: 599px) and (min-width: 200px) { @content; }
+}
+// "Special" mixins for screen sizes 
+@mixin smallscreenOne {
+    @media screen and (max-width: 599px) and (min-width: 450px) { @content; }
+}
+@mixin smallscreenTwo {
+    @media screen and (max-width: 451px) and (min-width: 200px) { @content; }
+}
+
+// Headings
+h1 {
+    color: #000; 
+    text-align: center; 
+    padding-top: 30px;
+    padding-bottom: 20px;  
+    text-transform: uppercase;
+    font-family: 'Alatsi', Arial, sans-serif;
+}
+h5 {
+    margin-bottom: 20px; 
+    font-family: 'Alatsi', Arial, sans-serif;
+    color: $colortwo; 
+}
+
+
+// Heading sizes
+@include bigscreen {
+    h1 {
+        font-size: 60px;
+    }
+    h2 {
+        font-size: 32px; 
+    }
+    h3 {
+        font-size: 28px; 
+    }
+    h5 {
+        font-size: 28px; 
+    }
+    p {
+        font-size: 16px; 
+    }
+    
+}
+@include medscreen {
+    h1 {
+        font-size: 50px;
+    }
+    h2 {
+        font-size: 32px; 
+    }
+    h3 {
+        font-size: 24px; 
+    }
+    h5 {
+        font-size: 24px; 
+    }
+    p {
+        font-size: 16px; 
+    }
+}
+@include smallscreen {
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 26px; 
+    }
+    h3 {
+        font-size: 20px; 
+    }
+    h5 {
+        font-size: 20px; 
+    }
+    p {
+        font-size: 14px; 
+    }
+}

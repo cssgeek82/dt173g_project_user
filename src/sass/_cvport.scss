@@ -1,0 +1,311 @@
+// Portfolio-section
+#portfoliocontent {
+    background-color: $blueone;
+    color: $colorone; 
+    background-repeat: repeat-y; 
+    background-position: center;
+    background-size: cover; 
+    margin: 0;
+    padding: 0;
+    min-height: 300px; 
+    padding-bottom: 20px; 
+}
+#showWebb {
+    color: #fff; 
+    max-width: 960px;
+    margin: auto;  
+    grid-area: one;
+}
+.webbunder {
+    grid-area: two; 
+}
+.showport {
+    display: grid; 
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "one"
+    "two";
+} 
+.readimg {
+    max-width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+}
+  
+.webfront, .webback {
+    text-align: center; 
+    h3 {
+        margin-top: 20px;
+        margin-bottom: 15px; 
+        color: $blueone; 
+    }
+    p {
+        padding: 10px; 
+        margin-bottom: 15px; 
+        a {
+            background-color: $blueone; 
+            color: #000;
+            border-radius: 6px;
+            padding: 7px; 
+            text-decoration: none;
+        }
+        a:hover {
+            background-color: $bluetwo;
+            color: #fff; 
+        }
+    }
+}
+  
+.webfront {
+    background-color: #000;
+}  
+.webback {
+    background-color: $darkgrey;
+    color: #fff;
+}
+
+@include bigscreen {
+    #portfoliocontent {
+        background-image: url("../../images/blueback.jpg");
+    }
+    #showWebb {
+        background-color: #000;
+    }
+    .webfront, .webback {
+        width: 100%;
+        height: 100%; 
+    }
+    .webbox {
+        background-color: transparent;
+        padding: 20px; 
+        margin: auto;
+    }
+    .webbox-inner {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+
+    .webbox {
+        width: 480px;
+        height: 320px;
+        perspective: 1000px;
+        display: flex;   
+        float: left;
+    }
+    .webbox:hover .webbox-inner {
+        transform: rotateY(180deg);
+    }
+    .webbox-inner {
+        position: relative;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    .webfront, .webback {
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden; 
+    }
+    .webback {
+        transform: rotateY(180deg);
+    }
+} 
+
+@include medscreen {
+    #portfoliocontent {
+        background-image: url("../../images/blueback.jpg");
+    }
+    #showWebb {
+        background-color: #000;
+    }
+    .webfront, .webback {
+        width: 100%;
+        height: 100%; 
+    }
+    .webbox {
+        background-color: transparent;
+        padding: 20px; 
+        margin: auto;
+    }
+    .webbox-inner {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+
+    .webbox {
+        width: 480px;
+        height: 320px;
+        perspective: 1000px;
+        margin: auto; 
+    }
+    .webbox:hover .webbox-inner {
+        transform: rotateY(180deg);
+    }
+    .webbox-inner {
+        position: relative;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    .webfront, .webback {
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden; 
+    }
+    .webback {
+        transform: rotateY(180deg);
+    }
+}  
+@include smallscreenOne {
+    #showWebb {
+        background-color: #000;
+    }
+    .webfront, .webback {
+        width: 100%;
+        height: 100%; 
+    }
+    .webbox {
+        background-color: transparent;
+        padding: 20px; 
+        margin: auto;
+        width: 430px;
+        height: 300px;
+        perspective: 1000px;
+    }
+    .webbox-inner {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    .webbox:hover .webbox-inner {
+        transform: rotateY(180deg);
+    }
+    .webbox-inner {
+        position: relative;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    .webfront, .webback {
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden; 
+    }
+    .webback {
+        transform: rotateY(180deg);
+    }
+}
+
+@include smallscreenTwo {
+    .readimg {
+        width: 100%; 
+        background-color: #000; 
+    }
+    .webbox {
+        width: 90%; 
+        padding: 0;
+        margin: auto; 
+        margin-bottom: 20px; 
+        background-color: transparent;
+    }
+    .webfront {
+        grid-area: front;
+        padding: 0;
+        margin: 0;
+    }
+    .webback {
+        grid-area: back; 
+        padding: 0;
+        margin: 0; 
+    }
+    .webbox-inner {
+        border: 2px solid #000; 
+        background-color: #000; 
+        margin: 0;
+        padding: 0;
+        display: grid; 
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "front"
+        "back";
+    }
+} 
+
+
+// Both sections
+.webbunder {
+    min-height: 20px; 
+}
+
+// CV-section
+#cvcontent {
+    background-color: $greenone;
+    color: $greentwo; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: cover; 
+    min-height: 300px; 
+    margin: 0;
+    padding: 0;
+    h2 {
+        margin-bottom: 20px; 
+        text-transform: uppercase;
+        color: $greenone; 
+    }
+}
+
+#cvwork {
+    @include cvboxes; 
+    margin-bottom: 20px; 
+}
+#cvstudy {
+    @include cvboxes; 
+    margin-bottom: 30px;  
+}
+
+.study {
+    margin-top: 20px; 
+}
+.study-name {
+    font-weight: 700;  
+    margin-bottom: 5px;
+}
+.study-date {
+    font-style: italic;
+}
+
+.work {
+    margin-bottom: 20px; 
+    color: $greentwo;
+}
+.work-place {
+    font-weight: 700;  
+    margin-bottom: 5px; 
+}
+.work-title {
+    margin-bottom: 3px; 
+}
+.work-date {
+    font-style: italic; 
+    font-weight: 300; 
+}
+
+@include smallscreen {
+    #cvcontent, #portfoliocontent {
+        padding-left: 10px;
+        padding-right: 10px; 
+    }
+} 
+@include medscreen {
+    #cvcontent, #portfoliocontent {
+        padding-left: 10px;
+        padding-right: 10px; 
+    }
+    #cvcontent {
+        background-image: url("../../images/greenback.jpg"); 
+    }
+}
+@include bigscreen {
+    #cvcontent {
+        background-image: url("../../images/greenback.jpg"); 
+    }
+}

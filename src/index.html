@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LT CV</title>
+    <link rel="stylesheet" href="css/sass/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alatsi&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">   
+</head>
+<body onload="loads()">   <!-- Starts function "loads" that starts functions to show posts  -->
+
+    <header class="mainheader">
+        <img class="headimg" src="images/LTlogo1.png" alt="LT logotyp">
+    </header>
+
+    <!-- Upper part of webpage -like index -->
+    <div class="upperwrapper">
+        <div class="uppercontent">
+            <div id="upperabout">
+                <h2>LT Webbutveckling</h2>
+                <p>Hej jag heter Lena och jag är en blivande webbutvecklare. Jag läser just nu andra året på Webbutvecklingsprogrammet på Mittuniversitetet.</p><br>
+                <p> Jag kan skapa webbsidor i HTML, CSS, JavaScript, PHP, Node.js och SQL. Jag kan även skapa egna teman i WordPress. </p>
+            </div>
+            <div id="upperportfolio">
+                <a href="#portfoliocontent">
+                <img class="upperimg" src="images/portfolio.png" alt="Portfolio">
+                </a>
+            </div>
+            <div id="uppercv">
+                <a href="#cvcontent">
+                <img class="upperimg" src="images/cv.png" alt="CV">
+                </a>
+            </div>
+        </div>    <!-- End div "uppercontent"-->
+    </div> <!-- End div "upperwrapper"-->
+
+    <!-- Between content -Contains background-image (with parallax scrolling effect) -->
+    <div id="betweenone" class="between"> 
+    </div>
+
+    <!-- Content portfolio-->
+    <div id="portfoliocontent">
+        <h1>Portfolio</h1>
+        <div class="showport">
+            <div id="showWebb"></div>  <!-- Read content from webbservice -->
+            <div class="webbunder"></div> <!-- To make space underneat above div -->
+        </div>
+    </div>
+
+    <!-- Between content -->
+    <div id="betweentwo" class="between">
+    </div>
+
+    <!-- Content CV -->
+    <div id="cvcontent">
+        <h1>CV</h1>
+        <div id="cvwork">
+            <h2>Arbetserfarenhet</h2>
+            <div id="showWork"> <!-- Writes work experience from db -->
+            </div>
+        </div>
+        <div id="cvstudy">
+            <h2>Mina studier</h2> 
+            <div id="showStudies"> <!-- Writes courses/programs from db -->
+            </div>
+        </div>
+        <div class="webbunder"></div> <!-- To make space underneat above div -->
+    </div>
+
+    <!-- Between content -->
+    <div id="betweenthree" class="between">
+    </div>
+
+    <footer class="mainfooter">
+        <div id="footerimage">
+            <a href="index.html">
+                <img class="footerimg" src="images/LTlogo1.png" alt="Logotyp">
+            </a>
+        </div>
+        <div id="footercontent">
+            <h5>Kontakt</h5>
+            <p>Lena Tibbling </p>
+            <p><a href="mailto:leti1900@student.miun.se?subject=Skickat-från-Cv-webbsida">leti1900@student.miun.se</a></p>
+            
+        </div>
+        <div id="footerupdate">
+            <h5>Om sidan</h5>
+            <p>Skapad med Gulp och SCSS. </p>
+            <p>Webbsidan är kopplad till en webbtjänst skapad med PHP. </p>
+            <p>Senast uppdaterad: 2020-11-26</p>
+        </div>
+    </footer>
+    
+
+    <script src="js/main.js"></script>
+</body>
+</html>

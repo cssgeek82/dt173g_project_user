@@ -1,0 +1,95 @@
+.upperwrapper {
+    background-color: #000; 
+    background-image: url("../../images/bground1a.png");
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: cover; 
+    min-height: 300px; 
+    margin: 0;
+    padding: 0; 
+}
+
+#upperabout, #uppercv, #upperportfolio {
+    @include upperboxes; 
+}
+#upperabout:hover, #uppercv:hover, #upperportfolio:hover {
+    @include upperboxes (true); 
+}
+#upperabout {
+    padding: 10px 28px;
+    h2 {
+        padding-bottom: 12px; 
+    }
+}
+
+.upperimg {
+    width: 100%; 
+}
+
+/* Small screen sizes */
+@include smallscreen {
+    .uppercontent {
+        padding-top: 100px; 
+        padding-bottom: 50px; 
+        display: grid; 
+        grid-template-columns: 5% 40% 10% 40% 5%; 
+        grid-template-rows: auto 30px auto; 
+    }
+    #upperabout {
+        grid-area: 1/2/2/5; 
+    }
+    #uppercv {
+        grid-area: 3/2/4/3; 
+    }    
+    #upperportfolio {
+        grid-area: 3/4/4/5; 
+    }
+    .upperimg {
+        max-width: 100%; 
+        max-height: 100%; 
+    }
+}
+
+/* Medium screen sizes */
+@include medscreen {
+    .uppercontent {
+        padding-top: 175px; 
+        padding-bottom: 100px; 
+        display: grid; 
+        grid-template-columns: auto 100px 200px 15px 15px 270px auto; 
+        grid-template-rows: 150px 120px 20px 50px 150px; 
+    }
+    #upperabout {
+        grid-area: 1/2/3/6; 
+    }
+    #uppercv {
+        grid-area: 4/3/6/5;
+        align-self: center; 
+    }    
+    #upperportfolio {
+        grid-area: 2/4/5/7; 
+    }
+}
+
+
+/* Big screen sizes */ 
+@include bigscreen { 
+    .uppercontent {
+        padding-top: 150px; 
+        padding-bottom: 100px; 
+        display: grid; 
+        grid-template-columns: auto 100px 200px 15px 15px 270px auto; 
+        grid-template-rows: 150px 120px 20px 50px 150px; 
+    }
+    #upperabout {
+        grid-area: 1/2/3/6; 
+    }
+    #uppercv {
+        grid-area: 4/3/6/5;
+        align-self: center; 
+    }    
+    #upperportfolio {
+        grid-area: 2/4/5/7; 
+    }
+}
+
